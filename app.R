@@ -113,9 +113,11 @@ wrap_label <- function(text, max_chars = 40) {
 # UI
 ui <- dashboardPage(
   skin = "blue",
-  dashboardHeader(title = "Community-Based Science Survey"),
+  dashboardHeader(title = "Community-Based Science Survey",
+                  titleWidth = 450),
   
   dashboardSidebar(
+    minified = FALSE,
     sidebarMenu(
       menuItem("About You", tabName = "about", icon = icon("user")),
       menuItem("Defining Success", tabName = "success", icon = icon("bullseye")),
