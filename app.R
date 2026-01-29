@@ -117,7 +117,6 @@ ui <- dashboardPage(
                   titleWidth = 450),
   
   dashboardSidebar(
-    minified = FALSE,
     sidebarMenu(
       menuItem("About You", tabName = "about", icon = icon("user")),
       menuItem("Defining Success", tabName = "success", icon = icon("bullseye")),
