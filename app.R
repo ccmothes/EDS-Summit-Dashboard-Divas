@@ -143,7 +143,7 @@ ui <- dashboardPage(
           background-color: #5DAEA3;
         }
         .skin-blue .main-header .logo {
-          background-color: #4A958B;
+          background-color: #5DAEA3;
           color: #ffffff;
           font-weight: 500;
         }
@@ -229,7 +229,7 @@ ui <- dashboardPage(
       # Actionable Outcomes Tab
       tabItem(tabName = "outcomes",
               fluidRow(
-                box(title = "Confidence in Project Sustainability", width = 4,
+                box(title = "Confidence in Project Actionable Outcomes", width = 4,
                     plotlyOutput("confidence_plot", height = "400px")),
                 box(title = "Common Challenges Faced", width = 8,
                     plotlyOutput("challenges_plot", height = "400px"))
@@ -310,10 +310,13 @@ server <- function(input, output) {
     
     plot_ly(sector_data, y = ~reorder(sector, count), x = ~count, type = "bar",
             orientation = "h", marker = list(color = teal_green)) %>%
-      layout(yaxis = list(title = ""), xaxis = list(title = "Count"),
-             margin = list(l = 300),
-             paper_bgcolor = 'rgba(0,0,0,0)',
-             plot_bgcolor = 'rgba(0,0,0,0)')
+      layout(
+        yaxis = list(title = "", tickfont = list(size = 10)),  # Smaller font
+        xaxis = list(title = "Count"),
+        margin = list(l = 180, r = 20, t = 20, b = 40),  # Reduced left margin from 300 to 180
+        paper_bgcolor = 'rgba(0,0,0,0)',
+        plot_bgcolor = 'rgba(0,0,0,0)'
+      )
   })
   
   output$geo_plot <- renderPlotly({
