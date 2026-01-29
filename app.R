@@ -127,7 +127,12 @@ ui <- dashboardPage(
     selectInput("role_filter", "Compare by Primary Role:",
                 choices = c("All Roles" = "all", "Academic", "Government", "Industry", 
                             "Non-Profit", "Student"),
-                selected = "all")
+                selected = "all"),
+    hr(),
+    div(
+      style = "padding: 0 15px; font-size: 13px; color: #666; line-height: 1.4;",
+      p("These findings are the result of a pilot survey of EDS Summit participants aiming to gain initial insight on how different stakeholders define success and actionable outcomes for community-based projects.")
+    )
   ),
   
   dashboardBody(
